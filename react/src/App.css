@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'RockSalt';
+    src: url('./Fonts/RockSalt-Regular.ttf');
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap;
+    color: white;
+    font-family: 'RockSalt';
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
