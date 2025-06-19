@@ -1,3 +1,4 @@
+import Footer from "../../components/footer/footer";
 function About() {
     return (
         <>
@@ -54,6 +55,7 @@ function About() {
                     </div>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }

@@ -1,3 +1,4 @@
+import Footer from "../../components/footer/footer";
 function Projects() {
     return (
         <>
@@ -12,6 +13,7 @@ function Projects() {
                     Currently empty cause I'm sad!
                 </p>
             </div>
+            <Footer />
         </>
     )
 }
