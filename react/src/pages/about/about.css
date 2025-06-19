@@ -8,67 +8,6 @@
     src: url('./Fonts/LexendTera-VariableFont_wght.ttf');
 }
 
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    box-sizing: border-box;
-}
-
-.navbar h1 {
-    font-size: 24px;
-    color: black;
-    margin: 10px;
-    font-family: 'RockSalt';
-}
-
-.navbar-links {
-    display: flex;
-    gap: 15px; /* Controls how close the links are */
-}
-
-.navbar-links a {
-    background-image: linear-gradient(
-      to right,
-      #adbbcf,
-      #adbbcf 50%,
-      #000 50%
-    );
-    background-size: 200% 100%;
-    background-position: -100%;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
-}
-
-.navbar-links a:before {
-    content: '';
-    background: #adbbcf;
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 3px;
-}
-
-.navbar-links a:hover {
-    background-position: 0;
-}
-
-.navbar a { 
-    font-family: 'Lexend';
-    font-size: 15px;
-    color: black;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
 .about-me-title {
     font-family: 'RockSalt';
     font-size: 40px;
