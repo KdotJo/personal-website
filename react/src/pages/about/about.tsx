@@ -1,63 +1,67 @@
 import Footer from "../../components/footer/footer";
-function About() {
-    return (
-        <>
-            <h1 className="about-me-title">About Me</h1>
-            <main className="about-me-section">
-                <div className="images">
-                    <img src="Images/hiking.jpg" className="hiking" alt="hiking" />
-                    <img src="Images/besties.jpg" alt="besties" />
-                    <img src="Images/family.jpg" alt="family" />
-                    <img src="Images/girlfriend.jpg" alt="girlfriend" />
-                    <img src="Images/canyon.JPG" alt="canyon" />
-                    <img src="Images/oregon.JPG" alt="oregon" />
-                </div>
-                <div className="center">
-                    <div className="p1">
-                        <p>
-                            What's up! I'm Kalo and I'm a student at Brigham Young University.
-                            <br />
-                            Currently I'm studying computer science and I'm learning about software engineering and hopefully AI.
-                            <br />
-                            I'm the eldest son, the mighty firstborn of my family phew* what a big responsibility hahaha!
-                            <br />
-                            This personal website is one of my very first individual projects!
-                        </p>
-                    </div>
-                    <div className="p2">
-                        <p>
-                            Those who know me would know that I have a very outgoing personality. I love joking around
-                            and laughing with people with good vibes. Even though I'm naturally a introvert
-                            I still love to be around people. The more friends I have with me the merrier 
-                            (Just give me space from time to time XD)! I have a strong belief that the people
-                            that you have around you is what makes life so extravegant and beautiful, and I'm a person who's
-                            been blessed with loyal friends, a loving family, and a beautiful girlfriend.
-                        </p>
-                    </div>
-                    <div className="p3">
-                        <p>
-                            Outside of conjuring up code, I enjoy playing video games, eating good food, and traveling.
-                            Usually I'm playing a game called league of legends. I've been playing it for about 10 years now
-                            (I still suck haha ;_;). When I'm not sinking my mental and LP on summoner's rift I love eating!
-                            Currently my favorite food is hotpot, but who knows that might change as I try some new dishes.
-                            Oh! and I've been to some really cool places. Some of my favorites are Korea, Oregon, Canada, and
-                            Hawaii! 
-                        </p>
-                    </div>
-                    <div className="p4">
-                        <p>
-                            If you're reading this you're either my future employer or a friend of mine! Regardless, I'm glad to have
-                            had the opportunity to introduce myself to you! I hope you've enjoyed getting to know a litte about  me as well!
-                            <br />
-                            <br />
-                            CYA~
-                        </p>
-                    </div>
-                </div>
-            </main>
-            <Footer />
-        </>
-    )
-}
+import "./about.css";
 
-export default About
+export default function About() {
+  return (
+    <>
+        <main>
+            <section className="about-hero">
+            <div className="container about-hero__grid">
+            <div className="about-hero__text">
+                <h1 className="about-hero__title">Hi, I’m Kalo & I’m a Software Engineer</h1>
+
+                <p>
+                What's up! I'm Kalo and I'm a student at Brigham Young University.
+                Currently I'm studying computer science and learning software engineering.
+                This personal website is one of my first individual projects—plus a home
+                for future work.
+                </p>
+
+                <p>
+                I’m outgoing, love good vibes, and believe the people around you make life
+                beautiful. I’ve been blessed with many wonderful people who inspire me to
+                be better.
+                </p>
+
+                <p>
+                Outside of code I enjoy snowboarding, traveling, and (always) good food.
+                Favorites lately: hotpot and trips to Korea, Canada, and Japan.
+                </p>
+                <p>
+                If you knew me, you’d know I dream big. I’m ambitious, confident, and not afraid
+                to chase what I want—or fail along the way. One of my biggest dreams? Retire wealthy, 
+                then become a high school history teacher! I know, kind of an odd goal for a software engineer, 
+                but I guess that just makes me unique.    
+                </p>
+                <p>
+                If you're reading this you're either my future employer or a friend of mine! Regardless, I'm glad to have
+                had the opportunity to introduce myself to you! I hope you've enjoyed getting to know a litte about  me as well! 
+                Welcome to my website and feel free to look around!
+                </p>
+                <p>
+                    -Kalo Jo
+                </p>
+
+            </div>
+
+            <div className="about-hero__photos">
+                <figure className="photo-card" tabIndex={0} aria-labelledby="lbl-family">
+                    <img className="photo" src="/Images/family.jpg" alt="My family" />
+                    <figcaption id="lbl-family" className="photo-tag">My family</figcaption>
+                </figure>
+                <figure className="photo-card" tabIndex={0} aria-labelledby="lbl-hiking">
+                    <img className="photo" src="/Images/hiking.jpg" alt="Hiking in Utah" />
+                    <figcaption id="lbl-hiking" className="photo-tag">Hiking in Utah</figcaption>
+                </figure>
+                <figure className="photo-card" tabIndex={0} aria-labelledby="Canada">
+                    <img className="photo" src="/Images/canada.jpeg" alt="Canada" />
+                    <figcaption id="Canada" className="photo-tag">Canada Trip!</figcaption>
+                </figure>
+            </div>
+            </div>
+            </section>
+        </main>
+        <Footer />
+    </>
+  );
+}

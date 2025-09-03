@@ -1,46 +1,139 @@
-@font-face {
-    font-family: 'RockSalt';
-    src: url('./Fonts/RockSalt-Regular.ttf');
-}
 
-@font-face {
-    font-family: 'Lexend';
-    src: url('./Fonts/LexendTera-VariableFont_wght.ttf');
-}
 
-.about-me-title {
-    font-family: 'RockSalt';
-    font-size: 40px;
-    font-weight: 400;
-    letter-spacing: 5px;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-
-.about-me-section {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.images img {
-    margin-left: 400px;
-    display: flex;
-    flex-wrap: column;
+:root{
+    --container: 1100px;
+  }
+  
+  /* Centers page content */
+  .container{
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+  
+  /* Hero section background (tweak to taste) */
+  .about-hero{
+    background: #f6f7fb;       /* light gray like the sample */
+    padding: 64px 0 96px;
+  }
+  
+  /* Two-column layout */
+  .about-hero__grid{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* text wider than photos */
     align-items: center;
-    margin-top: 10px;
-    width: 300px;
-    height: auto;
-}
+    gap: clamp(24px, 6vw, 56px);
+  }
+  
+  /* Text column */
+  .about-hero__text{
+    max-width: 60ch;    
+    margin-left: 35px;   
+    margin-top: -125px;     /* <-- keeps paragraphs in a tidy block */
+  }
+  
+  .about-hero__title{
+    font-family: 'Lexend', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 25 0 50px;
+    color: #f5572a;
+  }
 
-.center p {
-    flex: 1;
-    max-width: 625px;
-    font-family: 'Lexend';
-    font-size: 15px;
-    color: black;
-    text-align: left;   
-    margin-top: 20px;
-}
+  
+  .about-hero__text p{
+    font-family: 'Lexend', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #14213d;
+    margin: 0 0 16px;
+  }
+  
+  /* Photo collage */
+  .about-hero__photos {
+    display: flex;
+    flex-direction: column;  /* stack vertically */
+    gap: 24px;               /* space between photos */
+    align-items: center;
+    
+    padding-top: 50px;
+    margin-right: 35px;
+/* center align inside column */
+  }
+  
+  /* Each photo */
+  .photo-card {
+    position: relative;
+    display: inline-block;
+    border-radius: 16px;
+    overflow: hidden;                  /* rounds image + keeps tag inside */
+    outline: none;                     /* we’ll show focus via the tag */
+  }
+  
+  /* Optional visible focus for accessibility */
+  .photo-card:focus {
+    box-shadow: 0 0 0 3px rgba(80, 125, 255, 0.35);
+  }
+  
+  /* Your existing image rules still apply */
+  .photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Hover/focus “tab” */
+  .photo-tag {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    padding: 6px 10px;
+    font: 600 13px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, "Lexend", sans-serif;
+    color: #111;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    pointer-events: none;
+  
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+  
+  /* Small caret */
+  .photo-tag::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    bottom: -6px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: rgba(255,255,255,0.9) transparent transparent transparent;
+    filter: drop-shadow(0 -2px 2px rgba(0,0,0,0.06));
+  }
+  
+  /* Show on hover OR keyboard focus */
+  .photo-card:hover .photo-tag,
+  .photo-card:focus .photo-tag,
+  .photo-card:focus-within .photo-tag {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive: stack text above images on mobile */
+  @media (max-width: 900px){
+    .about-hero__grid{
+      grid-template-columns: 1fr;
+    }
+    .about-hero__photos{
+      min-height: 0;
+      margin-top: 8px;
+    }
+    /* Show just the main image on small screens for simplicity */
+    .photo{ position: relative; width: 100%; aspect-ratio: 4/3; transform: none; }
+    .photo--top, .photo--bottom{ display: none; }
+  }
+  
